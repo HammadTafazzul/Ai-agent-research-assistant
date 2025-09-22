@@ -1,4 +1,4 @@
-# AI Agent Intern — Take-Home Assignment
+# Ai-agent-research-assistant
 
 > Full AI-powered research summarizer web application — submit a query, fetch sources, extract content, generate structured summaries with Google Gemini, and store reports for future reference.
 
