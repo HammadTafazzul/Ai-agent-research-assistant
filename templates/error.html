@@ -1,0 +1,59 @@
+<!-- templates/error.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Error</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 50px;
+      margin: 0;
+    }
+    .container {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      max-width: 600px;
+      width: 90%;
+    }
+    h2 {
+      color: #cc0000;
+      margin-top: 0;
+    }
+    p {
+      font-size: 1em;
+      color: #333;
+    }
+    .error-box {
+      background: #ffe6e6;
+      border: 1px solid #cc0000;
+      padding: 15px 20px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+    a {
+      display: inline-block;
+      margin-top: 15px;
+      text-decoration: none;
+      color: #0077cc;
+      font-weight: bold;
+    }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>⚠️ Error</h2>
+    <div class="error-box">
+      <p>{{ message }}</p>
+    </div>
+    <a href="/">⬅ Back to Home</a>
+  </div>
+</body>
+</html>

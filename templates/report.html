@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Report - {{ report.title }}</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+    }
+    .container {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 800px;
+      margin-bottom: 50px;
+    }
+    h1, h2 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+    h2 {
+      font-size: 1.2em;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+      margin-top: 25px;
+    }
+    p {
+      line-height: 1.6;
+      color: #555;
+    }
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+    .error-box {
+      background: #ffe6e6;
+      border: 1px solid #cc0000;
+      padding: 15px;
+      border-radius: 5px;
+      color: #900;
+      margin-bottom: 15px;
+    }
+    ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+    .key-points li {
+      margin-bottom: 8px;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    details {
+      margin-top: 15px;
+      padding: 10px;
+      background: #f0f0f0;
+      border-radius: 5px;
+    }
+    .nav-links {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav-links">
+      <a href="/reports">← Back to history</a> | <a href="/">New query</a>
+    </div>
+
+    <h1>{{ report.title }}</h1>
+    <p><em>Query:</em> {{ report.query }} — <strong>Status:</strong> {{ report.status }}</p>
+
+    {# === Friendly error handling === #}
+    {% if report.summary.error %}
+      <div class="error-box">
+        <strong>⚠️ Unable to generate summary:</strong><br>
+        {{ report.summary.message or report.summary.error }}
+      </div>
+    {% else %}
+      <h2>Summary</h2>
+      <p>{{ report.summary.summary }}</p>
+
+      <h2>Key Points</h2>
+      <ul class="key-points">
+        {% for kp in report.summary.key_points %}
+          <li><strong>{{ kp.point }}:</strong> {{ kp.detail }}</li>
+        {% endfor %}
+      </ul>
+
+      <h2>Sources</h2>
+      <ul>
+        {% for s in report.summary.sources %}
+          <li><a href="{{ s.url }}" target="_blank">{{ s.note or s.url }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <h2>Notes</h2>
+    {% if report.notes %}
+      <pre>{{ report.notes }}</pre>
+    {% else %}
+      <p><em>No notes available.</em></p>
+    {% endif %}
+
+    <h2>Full Extract</h2>
+    <pre style="white-space:pre-wrap">{{ report.full_text }}</pre>
+
+    <details>
+      <summary>🔎 Debug: Raw Summary JSON</summary>
+      <pre>{{ report.summary | tojson(indent=2) }}</pre>
+    </details>
+  </div>
+</body>
+</html>

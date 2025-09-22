@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Saved Reports</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+    }
+    .container {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 700px;
+      margin-bottom: 50px;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      padding: 15px 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fafafa;
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+    }
+    .date {
+      font-size: 0.85em;
+      color: #666;
+      margin-top: 3px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.85em;
+      font-weight: bold;
+      margin-left: 10px;
+      white-space: nowrap;
+    }
+    .ok { background: #d4edda; color: #155724; }        /* green */
+    .partial { background: #fff3cd; color: #856404; }   /* yellow */
+    .failed { background: #f8d7da; color: #721c24; }    /* red */
+    .new-query {
+      display: inline-block;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #0077cc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Saved Reports</h1>
+    <a class="new-query" href="/">➕ New Query</a>
+
+    <ul>
+      {% for r in reports %}
+        <li>
+          <div class="info">
+            <a href="/report/{{ r.id }}">{{ r.title or r.query }}</a>
+            <span class="date">{{ r.created_at.strftime('%Y-%m-%d %H:%M') }}</span>
+          </div>
+          {% if r.status == "ok" %}
+            <span class="badge ok">OK</span>
+          {% elif r.status == "partial" %}
+            <span class="badge partial">Partial</span>
+          {% else %}
+            <span class="badge failed">Failed</span>
+          {% endif %}
+        </li>
+      {% else %}
+        <li><em>No reports yet.</em></li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>

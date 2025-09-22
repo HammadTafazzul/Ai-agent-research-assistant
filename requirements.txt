@@ -1,0 +1,9 @@
+flask
+requests
+trafilatura
+pypdf
+sqlalchemy
+python-dotenv
+readability-lxml
+beautifulsoup4
+google-genai
