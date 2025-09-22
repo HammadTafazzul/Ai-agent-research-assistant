@@ -50,7 +50,7 @@ This repository implements a research summarizer web app built with Flask. Users
 ---
 
 ## Simplified diagram
-
+```bash
 User Query
 │
 ▼
@@ -66,10 +66,7 @@ Flask App
 │
 ▼
 UI (Submit / View Reports)
-
-
-> You can replace the ASCII diagram with a nicer image: `assets/architecture.png` (see **Screenshots** section below).
-
+```
 ---
 
 ## Where AI is used
