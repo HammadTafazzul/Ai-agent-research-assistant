@@ -71,9 +71,13 @@ UI (Submit / View Reports)
 
 ## Where AI is used
 
-- **Google Gemini (via `google-genai`)**:
-  - Produces structured JSON: `title`, `summary`, `key_points`, `sources`.
-  - Handles unexpected outputs safely; the system logs raw AI outputs for debugging and shows a friendly error if the AI fails.
+### AI Assistance
+
+- **Code scaffolding:** Used AI (ChatGPT) to generate boilerplate for Flask routes, SQLAlchemy models, and HTML templates.  
+- **Error handling improvements:** Asked AI for suggestions on how to implement user-friendly error messages and logging.  
+- **UI design:** Used AI to refine the look of index.html, history.html, and report.html for consistent style.  
+- **Documentation:** AI helped draft parts of this README (setup steps, usage examples, and diagrams).  
+- **Not AI-generated:** All debugging, testing, environment setup, and integration decisions were done manually.
 
 ---
 
