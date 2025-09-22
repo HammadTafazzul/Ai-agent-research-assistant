@@ -173,32 +173,22 @@ Summary: Artificial intelligence is rapidly transforming education. Tools are cl
 - Do not commit `.env` or any secrets to the repo.  
 - Turn off `debug=True` in production.  
 
-## Screenshots
-
-### Architecture diagram
-- Filename: assets/architecture.png  
-- Where to insert: directly under *Simplified diagram* (replace or supplement the ASCII diagram).  
-
-### Extraction pipeline / flowchart
-- Filename: assets/extraction_pipeline.png  
-- Where to insert: in the *How it works* section (below extraction bullet).  
+## Screenshots 
 
 ### UI - Home / Query page
-- Filename: assets/ui_home.png  
-- Where to insert: in *UI* or *Example Results* section.  
+![image alt](https://github.com/HammadTafazzul/Ai-agent-research-assistant/blob/main/images/home%20page.png?raw=true)
 
 ### UI - History page (reports list)
-- Filename: assets/ui_history.png  
-- Where to insert: near *UI — Users can view* or *Example Results*.  
+![image alt](https://github.com/HammadTafazzul/Ai-agent-research-assistant/blob/main/images/history%20page.png?raw=true)
 
 ### UI - Report detail view
-- Filename: assets/ui_report.png  
-- Where to insert: near *Example Results* or in *Files of Interest*.  
+![image alt](https://github.com/HammadTafazzul/Ai-agent-research-assistant/blob/main/images/report%20detail%20view%20(2).png?raw=true)  
+![image alt](https://github.com/HammadTafazzul/Ai-agent-research-assistant/blob/main/images/report%20detail%20view%20(1).png?raw=true)
 
 ### Generated summary sample
-- Filename: assets/sample_summary.png  
-- Where to insert: in *Example Results* section (visual example).  
-
+![image alt](https://github.com/HammadTafazzul/Ai-agent-research-assistant/blob/main/images/sample%20generated%20(1).png?raw=true)
+![image alt](https://github.com/HammadTafazzul/Ai-agent-research-assistant/blob/main/images/sample%20generated%20(3).png?raw=true)
+![image alt](https://github.com/HammadTafazzul/Ai-agent-research-assistant/blob/main/images/sample%20generated%20(2).png?raw=true)
 
 ## Contributing
 
